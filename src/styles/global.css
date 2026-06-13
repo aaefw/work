@@ -1,1 +1,35 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@import './fonts.css';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-i: 'Host Grotesk', sans-serif;
+    --font-sans: 'Overused Grotesk', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --leading-snug: 1.4;
+
+    --color-dark-50: #f3f3f3;
+    --color-dark-100: #e3e3e3;
+    --color-dark-200: #d3d3d3;
+    --color-dark-300: #b3b3b3;
+    --color-dark-400: #a3a3a3;
+    --color-dark-500: #737373;
+    --color-dark-600: #535353;
+    --color-dark-700: #333333;
+    --color-dark-800: #232323;
+    --color-dark-900: #131313;
+    --color-dark-950: #03030c;
+
+    --color-iii-50: #c2ffe3;
+    --color-iii-100: #85ffc8;
+    --color-iii-200: #5cffb6;
+    --color-iii-300: #33ffa3;
+    --color-iii-400: #0aff91;
+    --color-iii-500: #00e17c;
+    --color-iii-600: #00b865;
+    --color-iii-700: #008f4f;
+    --color-iii-800: #006638;
+    --color-iii-900: #003d22;
+    --color-iii-950: #002916;
+}

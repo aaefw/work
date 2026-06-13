@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Host Grotesk';
+    src: url('/fonts/HostGrotesk.woff2');
+}
+
+@font-face {
+    font-family: 'Overused Grotesk';
+    src: url('/fonts/OverusedGrotesk.woff2');
+    font-feature-settings: 'cv05';
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('/fonts/SpaceMono.woff2');
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('/fonts/SpaceMonoItalic.woff2');
+    font-style: italic;
+}
