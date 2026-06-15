@@ -9,9 +9,9 @@ export default function Header() {
                 <div className="size-10 aspect-square rounded-full object-top overflow-hidden">
                     <img src={me.src} alt={site.description} className="h-16.75 object-cover" />
                 </div>
-                <div>
+                <div className="select-none">
                     <h1 className="font-i text-[1rem] tracking-tighter text-black dark:text-white">
-                        <span className="font-sans text-[1.1rem]">A</span>tlas Estrada
+                        <span className="font-sans text-[1.05rem]">A</span>tlas Estrada
                     </h1>
                     <h2 className="text-muted-foreground">Web Developer</h2>
                 </div>

@@ -8,6 +8,7 @@
     --font-i: 'Host Grotesk', sans-serif;
     --font-sans: 'Overused Grotesk', sans-serif;
     --font-mono: 'Space Mono', monospace;
+    --text-base: 0.93rem;
     --leading-snug: 1.4;
 
     --color-dark-50: #f3f3f3;
@@ -66,14 +67,14 @@
 :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
+    --card: oklch(0.96 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
     --primary: oklch(0.205 0 0);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
+    --secondary-foreground: oklch(0.205 0 0 / 95%);
     --muted: oklch(0.97 0 0);
     --muted-foreground: oklch(0.556 0 0);
     --accent: oklch(0.97 0 0);
@@ -95,7 +96,7 @@
     --primary: oklch(0.922 0 0);
     --primary-foreground: oklch(0.205 0 0);
     --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
+    --secondary-foreground: oklch(0.985 0 0 / 90%);
     --muted: oklch(0.269 0 0);
     --muted-foreground: oklch(0.708 0 0);
     --accent: oklch(0.269 0 0);
@@ -109,6 +110,8 @@
 @layer base {
     * {
         @apply border-border outline-ring/50;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-muted) var(--color-background);
     }
 
     html {
@@ -116,6 +119,20 @@
     }
 
     body {
-        @apply text-foreground bg-background;
+        @apply text-base tracking-tight text-foreground bg-background selection:text-dark-950 selection:bg-iii-300;
+    }
+
+    h2,
+    h3,
+    p {
+        word-spacing: 0.02em;
+    }
+
+    p {
+        @apply text-pretty leading-snug text-secondary-foreground;
+    }
+
+    strong {
+        @apply font-medium;
     }
 }
