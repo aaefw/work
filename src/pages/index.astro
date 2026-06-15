@@ -1,7 +1,199 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
+import Header from '@/components/layout/Header'
+
+const experience = [
+    {
+        title: 'Project Manager',
+        company: 'Profesionalización Virtual',
+        date: 'September, 2025 → April, 2026',
+        description:
+            'Design of credentials, photography direction and editing, web project development, and coordination of digital products, ensuring consistency, quality, and timely delivery.',
+        tags: ['Full-Time', 'Partially In-Person']
+    },
+    {
+        title: 'Jr. Web Designer',
+        company: 'Pixel Invitación',
+        date: 'August → September, 2025',
+        description:
+            "Design of personalized digital invitations using graphic resources and CMS. Team collaboration, meeting deadlines, and alignment with the company's design approach.",
+        tags: ['Full-Time', 'In-Person', 'Formative Experience']
+    },
+    {
+        title: 'Main Front End Developer',
+        company: 'Profesionalización Virtual',
+        date: 'April, 2024 → August, 2025',
+        description:
+            'Design and development of interfaces for systems, websites and applications. Responsible for UX & UI design, layout, testing, and creation of reusable components and utilities.',
+        tags: ['Full-Time', 'Remote']
+    },
+    {
+        title: 'Science Teacher',
+        company: 'School MindUp',
+        date: 'September, 2024 → February, 2025',
+        description: 'Programming, technology, and science classes for students ages 8 to 18, combining theory and practice.',
+        tags: ['In-Person']
+    },
+    {
+        title: 'Team Leader & Full Stack Developer',
+        company: 'Municipal DIF',
+        date: 'October, 2023 → May, 2024',
+        description:
+            "Development of the Integral Management System web project. Overseeing the team's code, defining the project architecture, developing the database, and creating the user interface.",
+        tags: ['Partially In-Person', 'Professional Internships']
+    },
+    {
+        title: 'Library Manager',
+        company: 'CONALEP',
+        date: 'March → September, 2023',
+        description:
+            'Management of the library collection, resource management, support for the educational community, student counseling, and assistance with activities to promote reading.',
+        tags: ['In-Person', 'Social Service']
+    }
+]
+
+const formation = [
+    {
+        title: 'Technical Professional–Bachelor in Computer Science',
+        company: 'Colegio Nacional de Educación Profesional Técnica',
+        date: '2021 → 2024',
+        description:
+            'Academic excellence. Training in AI, technology, networking and programming. Participation in robotics club, and certifications in networking and Excel applied to databases.'
+    },
+    {
+        title: 'Web Development Courses',
+        company: 'Midudev Academy',
+        date: 'December, 2025',
+        description: 'CSS (animations, grid), Figma, GSAP, HTML, JavaScript (ES2023 & ES2024, promises), Python, Tailwind CSS and TypeScript (utility types).'
+    }
+]
+
+const stack = [
+    {
+        title: 'Development',
+        skills: ['HTML', 'CSS', 'Git', 'GitHub', 'Markdown']
+    },
+    {
+        title: 'Languages',
+        skills: ['TypeScript', 'JavaScript', 'PHP']
+    },
+    {
+        title: 'Frameworks',
+        skills: ['Astro', 'Vue', 'Tailwind CSS', 'Bootstrap']
+    },
+    {
+        title: 'Libraries',
+        skills: ['React', 'jQuery', 'Shadcn UI', 'Motion']
+    },
+    {
+        title: 'Databases',
+        skills: ['SQL', 'MySQL']
+    },
+    {
+        title: 'Design',
+        skills: ['Inkscape', 'Figma', 'Canva']
+    },
+    {
+        title: 'Productivity',
+        skills: ['Notion', 'Artificial Intelligence', 'Office Suite', 'Google Workspace']
+    }
+]
+
+const awards = [
+    {
+        title: 'Outstanding Commitment to Reading',
+        info: 'Award, 2024'
+    },
+    {
+        title: 'Mathematical Reasoning',
+        info: 'First Place, 2023'
+    },
+    {
+        title: 'Public Speaking',
+        info: 'First Place, 2023'
+    },
+    {
+        title: 'General Knowledge',
+        info: 'First Place, 2019'
+    }
+]
 ---
 
 <Layout>
-    <h1>Work</h1>
+    <Header client:load />
+
+    <main class="mt-15 space-y-10">
+        <p>
+            I'm a Technical Professional and Bachelor in Computer Science, web developer and designer. I have a distinctive taste for typography and coffee, and I
+            appreciate proper spelling and learning – in which I'm particularly versed.
+        </p>
+        <section class="space-y-4.5">
+            <h2 class="text-muted-foreground">Experience</h2>
+            {
+                experience.map((item) => (
+                    <div class="space-y-1">
+                        <h2>
+                            <strong>{item.title}</strong> – {item.company}
+                        </h2>
+                        <h3 class="text-sm text-muted-foreground">{item.date}</h3>
+                        <p>{item.description}</p>
+                        <div class="mt-2 flex items-center gap-1">
+                            {item.tags.map((tag) => (
+                                <span class="size-fit px-1.5 py-0.5 text-xs text-muted-foreground tracking-normal bg-card rounded-sm select-none">{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </section>
+        <section class="space-y-4.5">
+            <h2 class="text-muted-foreground">Formation</h2>
+            {
+                formation.map((item) => (
+                    <div class="space-y-1">
+                        <h2 class="font-medium">{item.title}</h2>
+                        <h3 class="text-sm text-muted-foreground">
+                            {item.company} – {item.date}
+                        </h3>
+                        <p>{item.description}</p>
+                    </div>
+                ))
+            }
+        </section>
+        <section class="space-y-4.5">
+            <h2 class="text-muted-foreground">Skills</h2>
+            <table class="w-full table-auto">
+                <tbody>
+                    {
+                        stack.map((item) => (
+                            <tr class="*:py-1.5">
+                                <td class="pr-5 md:pr-8 flex">
+                                    <h2>{item.title}</h2>
+                                </td>
+                                <td>
+                                    <h3 class="col-span-2 text-balance text-muted-foreground">
+                                        {item.skills.map((skill, index) => (
+                                            <span>{`${skill}${index < item.skills.length - 1 ? ', ' : ''}`}</span>
+                                        ))}
+                                    </h3>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </section>
+        <section class="space-y-4.5">
+            <h2 class="text-muted-foreground">Awards</h2>
+            <div class="space-y-1.5">
+                {
+                    awards.map((award) => (
+                        <h2 class="sm:flex sm:gap-2">
+                            {award.title}, <span class="text-muted-foreground">{award.info}</span>
+                        </h2>
+                    ))
+                }
+            </div>
+        </section>
+    </main>
 </Layout>
