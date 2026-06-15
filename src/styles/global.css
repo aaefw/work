@@ -9,7 +9,7 @@
     --font-sans: 'Overused Grotesk', sans-serif;
     --font-mono: 'Space Mono', monospace;
     --text-base: 0.93rem;
-    --leading-snug: 1.4;
+    --leading-snug: 1.37;
 
     --color-dark-50: #f3f3f3;
     --color-dark-100: #e3e3e3;
@@ -120,6 +120,16 @@
 
     body {
         @apply text-base tracking-tight text-foreground bg-background selection:text-dark-950 selection:bg-iii-300;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    p,
+    span,
+    strong {
+        @apply transition-colors duration-200;
     }
 
     h2,

@@ -1,6 +1,75 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Header from '@/components/layout/Header'
+import Contact from '@/components/Contact'
+import sai from '@/assets/projects/sai.png'
+import i022 from '@/assets/projects/022.png'
+import aula from '@/assets/projects/aula.png'
+import mcu from '@/assets/projects/mcu.png'
+import naats from '@/assets/projects/naats.png'
+import ttt from '@/assets/projects/ttt.png'
+
+const projects = [
+    {
+        name: 'SAI',
+        type: 'Website',
+        url: 'https://saipv.info',
+        date: 'June, 2026',
+        image: sai,
+        stack: ['Astro', 'React', 'Shadcn UI', 'TypeScript', 'Tailwind CSS']
+    },
+    {
+        name: 'Naats',
+        type: 'Website',
+        url: 'https://naats.site',
+        date: 'June, 2025',
+        image: naats,
+        stack: ['Astro', 'TypeScript', 'Tailwind CSS']
+    },
+    {
+        name: 'Chess 022',
+        type: 'Website',
+        url: 'https://a022.vercel.app',
+        date: 'May, 2025',
+        image: i022,
+        stack: ['Astro', 'TypeScript', 'Tailwind CSS']
+    },
+    {
+        name: 'Next MCU',
+        type: 'Website',
+        url: 'https://next-mcu.vercel.app',
+        date: 'January, 2025',
+        image: mcu,
+        stack: ['PHP', 'MCU API', 'JavaScript', 'CSS', 'HTML']
+    },
+    {
+        name: 'Textest',
+        type: 'Webapp',
+        url: 'https://textest-app.vercel.app',
+        date: 'January, 2025',
+        image: ttt,
+        stack: ['Vue', 'TypeScript', 'Tailwind CSS', 'CSS']
+    },
+    {
+        name: 'SIGA',
+        type: 'System',
+        date: 'August, 2024',
+        image: aula,
+        stack: ['Laravel', 'Vue', 'Laravel Blade', 'PHP', 'JavaScript', 'Bootstrap', 'CSS', 'Laravel Herd']
+    },
+    {
+        name: 'Chess 022',
+        type: 'System',
+        date: 'March, 2024',
+        stack: ['PHP', 'SQL', 'MySQL', 'JQuery', 'JavaScript', 'CSS', 'HTML', 'XAMPP']
+    },
+    {
+        name: 'SIGEI',
+        type: 'System',
+        date: 'October, 2024',
+        stack: ['PHP', 'SQL', 'MySQL', 'JQuery', 'JavaScript', 'CSS', 'HTML', 'XAMPP']
+    }
+]
 
 const experience = [
     {
@@ -123,10 +192,54 @@ const awards = [
     <Header client:load />
 
     <main class="mt-15 space-y-10">
-        <p>
-            I'm a Technical Professional and Bachelor in Computer Science, web developer and designer. I have a distinctive taste for typography and coffee, and I
-            appreciate proper spelling and learning – in which I'm particularly versed.
-        </p>
+        <article class="space-y-2">
+            <p>
+                Front end developer with +3 years of experience in web development. With the intention of exploring its potential to express concepts, and solve problems.
+            </p>
+            <p>I'm 19 years old, and I started learning to code when I was 15. Originally from Mexico; I speak Spanish, and English (B2 level).</p>
+            <p>
+                I've a particular interest in design, microinteractions, typography, and coffee, and I appreciate proper spelling and learning – in which I'm particularly
+                versed.
+            </p>
+            <Contact client:load />
+        </article>
+        <section class="space-y-4.5">
+            <h2 class="text-muted-foreground">Some Projects</h2>
+            <div class="space-y-4">
+                {
+                    projects.map((project) => {
+                        const Card = project.url ? 'a' : 'div'
+
+                        return (
+                            <Card
+                                href={project.url}
+                                target={project.url ? '_blank' : undefined}
+                                rel={project.url ? 'noopener noreferrer' : undefined}
+                                class="w-full h-fit block px-3 py-3.5 space-y-3 group rounded-xl border transition-all"
+                            >
+                                {project.image && <img src={project.image.src} alt={project.name} class="w-full h-auto rounded-lg object-cover" />}
+
+                                <div class="space-y-1">
+                                    <header class="w-full flex items-center justify-between gap-3">
+                                        <h2 class="inline-flex">
+                                            {project.name}
+                                            <span class="text-muted-foreground">, {project.type}</span>
+                                        </h2>
+                                        <span class="text-sm text-muted-foreground">{project.date}</span>
+                                    </header>
+
+                                    <div class="mt-2 flex flex-wrap items-center gap-1">
+                                        {project.stack.map((tag) => (
+                                            <span class="size-fit px-1.5 py-0.5 text-xs text-muted-foreground tracking-normal bg-card rounded-sm select-none">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </Card>
+                        )
+                    })
+                }
+            </div>
+        </section>
         <section class="space-y-4.5">
             <h2 class="text-muted-foreground">Experience</h2>
             {
@@ -188,7 +301,7 @@ const awards = [
             <div class="space-y-1.5">
                 {
                     awards.map((award) => (
-                        <h2 class="sm:flex sm:gap-2">
+                        <h2 class="sm:flex sm:gap-1.5">
                             {award.title}, <span class="text-muted-foreground">{award.info}</span>
                         </h2>
                     ))
