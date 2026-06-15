@@ -17,7 +17,7 @@ export default function Theme() {
     }
 
     return (
-        <Button onClick={toggleTheme} variant="ghost" size="icon" aria-label="Toggle theme">
+        <Button onClick={toggleTheme} variant="ghost" size="icon" title="Theme" aria-label="Toggle theme">
             <IconCircleHalf2 className="size-4 rotate-0 transition-all dark:-rotate-180" />
         </Button>
     )
