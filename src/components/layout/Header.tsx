@@ -1,4 +1,5 @@
 import { site } from '@/data'
+import { DiaTextReveal } from '../dia-text'
 import Theme from '../Theme'
 import me from '@/assets/me.webp'
 
@@ -10,8 +11,8 @@ export default function Header() {
                     <img src={me.src} alt={site.description} className="h-17 md:h-16.75 object-cover" />
                 </div>
                 <div className="select-none">
-                    <h1 className="font-i text-[1rem] tracking-tighter text-black dark:text-white">
-                        <span className="font-sans text-[1.05rem]">A</span>tlas Estrada
+                    <h1>
+                        <DiaTextReveal text="Atlas Estrada" className="font-i text-[1rem] tracking-tighter text-black dark:text-white" />
                     </h1>
                     <h2 className="text-muted-foreground">Web developer</h2>
                 </div>
