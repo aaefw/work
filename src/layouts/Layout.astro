@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css'
 import { site } from '@/data'
+import Analytics from '@vercel/analytics/astro'
 
 const canonical = new URL(Astro.url.pathname, Astro.site)
 ---
@@ -48,6 +49,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site)
         <meta name="twitter:image" content={site.preview} />
     </head>
     <body class="sm:max-w-115 mx-auto px-5 sm:px-0 pt-30 pb-20">
+        <Analytics />
         <slot />
     </body>
 </html>
