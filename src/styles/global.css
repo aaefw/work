@@ -10,6 +10,7 @@
     --font-mono: 'Space Mono', monospace;
     --text-base: 0.935rem;
     --leading-snug: 1.37;
+    --tracking-tight: -0.02em;
 
     --color-dark-50: #f3f3f3;
     --color-dark-100: #e3e3e3;
@@ -112,7 +113,7 @@
         @apply border-border outline-ring/50;
         scrollbar-width: thin;
         scrollbar-color: var(--color-ring) var(--color-background);
-        word-spacing: 0.03em;
+        word-spacing: 0.035em;
     }
 
     html {
@@ -132,11 +133,20 @@
         @apply transition-colors duration-200;
     }
 
-    p {
+    section {
+        @apply space-y-5;
+    }
+
+    p,
+    li {
         @apply text-pretty leading-snug text-secondary-foreground;
     }
 
     strong {
         @apply font-medium;
+    }
+
+    code {
+        @apply mx-0.5 px-1 text-sm tracking-tighter bg-dark-100 dark:bg-dark-900 rounded-sm;
     }
 }
