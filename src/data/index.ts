@@ -17,8 +17,8 @@ export const mail: Link = {
 
 export const ig: Link = {
     title: 'Instagram',
-    url: 'https://instagram.com/aaef.w',
-    label: 'aaef.w'
+    url: 'https://instagram.com/efls.w',
+    label: 'efls.w'
 }
 
 export const x: Link = {
