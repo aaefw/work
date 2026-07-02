@@ -23,14 +23,14 @@ export const ig: Link = {
 
 export const x: Link = {
     title: 'X',
-    url: 'https://x.com/aaef_w',
-    label: 'aaef_w'
+    url: 'https://x.com/efls_w',
+    label: 'efls_w'
 }
 
 export const gh: Link = {
     title: 'GitHub',
-    url: 'https://github.com/aaefw',
-    label: 'aaefw'
+    url: 'https://github.com/eflsw',
+    label: 'eflsw'
 }
 
 export const resume: Link = {
